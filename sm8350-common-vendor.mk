@@ -6,6 +6,10 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/sm8350-common
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/sm8350-common/proprietary/system/etc/permissions/vendor.xiaomi.hardware.misys-V1.0-java-permission.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.xiaomi.hardware.misys-V1.0-java-permission.xml \
+    vendor/xiaomi/sm8350-common/proprietary/system/etc/permissions/vendor.xiaomi.hardware.misys-V2.0-java-permission.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.xiaomi.hardware.misys-V2.0-java-permission.xml \
+    vendor/xiaomi/sm8350-common/proprietary/system/etc/permissions/vendor.xiaomi.hardware.misys-V4.0-java-permission.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.xiaomi.hardware.misys-V4.0-java-permission.xml \
+    vendor/xiaomi/sm8350-common/proprietary/system/etc/permissions/vendor.xiaomi.hardware.misys.V3_0-permission.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.xiaomi.hardware.misys.V3_0-permission.xml \
     vendor/xiaomi/sm8350-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/xiaomi/sm8350-common/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
     vendor/xiaomi/sm8350-common/proprietary/system_ext/etc/init/wfdservice.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/wfdservice.rc \
@@ -95,6 +99,10 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.qti.secure_element@1.2-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.secure_element@1.2-service.rc \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.citsensorservice@1.1-service.rc \
+    vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc \
+    vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc \
+    vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc \
+    vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/vppservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vppservice.rc \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/init/wfdvndservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wfdvndservice.rc \
@@ -141,12 +149,21 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8350-common/proprietary/vendor/etc/wifi/aoa_cldb_swl14.bin:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/aoa_cldb_swl14.bin
 
 PRODUCT_PACKAGES += \
+    libmisys_jni.xiaomi \
+    vendor.xiaomi.hardware.misys@1.0 \
+    vendor.xiaomi.hardware.misys@2.0 \
+    vendor.xiaomi.hardware.misys@3.0 \
+    vendor.xiaomi.hardware.misys@4.0 \
     eglSubDriverAndroid \
     libEGL_adreno \
     libGLESv1_CM_adreno \
     libGLESv2_adreno \
     libq3dtools_adreno \
     libq3dtools_esx \
+    vendor.xiaomi.hardware.misys@1.0-impl \
+    vendor.xiaomi.hardware.misys@2.0-impl \
+    vendor.xiaomi.hardware.misys@3.0-impl \
+    vendor.xiaomi.hardware.misys@4.0-impl \
     vulkan.adreno \
     libC2D2 \
     libCB \
@@ -154,6 +171,7 @@ PRODUCT_PACKAGES += \
     libadreno_utils \
     libc2d30_bltlib \
     libcdsprpc \
+    libcheckpid \
     libconfigdb \
     libcvp2_1 \
     libcvp_common \
@@ -166,7 +184,11 @@ PRODUCT_PACKAGES += \
     libidl \
     libllvm-glnext \
     libllvm-qcom \
+    liblogwrap_vendor \
     libmdmdetect \
+    libmicuttlefish_fs \
+    libmicuttlefish_utils \
+    libmivsock_utils \
     libmmosal_vendor \
     libnetmgr \
     libperfconfig \
@@ -210,6 +232,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vpp@2.0 \
     vendor.qti.memory.pasrmanager@1.0 \
     vendor.qti.memory.pasrmanager@1.1 \
+    vendor.xiaomi.hardware.misys@1.0_vendor \
+    vendor.xiaomi.hardware.misys@2.0_vendor \
+    vendor.xiaomi.hardware.misys@3.0_vendor \
+    vendor.xiaomi.hardware.misys@4.0_vendor \
     btaudio_offload_if \
     vendor.qti.hardware.bluetooth_audio@2.1-impl \
     libFileMux_proprietary \
@@ -547,6 +573,10 @@ PRODUCT_PACKAGES += \
     qcrilmsgtunnel \
     WfdCommon \
     tcmclient \
+    vendor.xiaomi.hardware.misys-V1.0-java \
+    vendor.xiaomi.hardware.misys-V2.0-java \
+    vendor.xiaomi.hardware.misys-V4.0-java \
+    vendor.xiaomi.hardware.misys.V3_0 \
     audiosphere \
     com.android.hotwordenrollment.common.util \
     com.qti.dpmframework \
@@ -558,6 +588,10 @@ PRODUCT_PACKAGES += \
     manifest_vendor.xiaomi.hardware.mlipay.xml \
     vendor.qti.gnss@4.0-service.xml \
     vendor.xiaomi.hardware.citsensorservice@1.1-service.xml \
+    vendor.xiaomi.hardware.misys@1.0.xml \
+    vendor.xiaomi.hardware.misys@2.0.xml \
+    vendor.xiaomi.hardware.misys@3.0.xml \
+    vendor.xiaomi.hardware.misys@4.0.xml \
     adpl \
     adsprpcd \
     cdsprpcd \
@@ -582,6 +616,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.media.c2@1.0-service \
     vendor.qti.secure_element@1.2-service \
     vendor.xiaomi.hardware.citsensorservice@1.1-service \
+    vendor.xiaomi.hardware.misys@1.0-service \
+    vendor.xiaomi.hardware.misys@2.0-service \
+    vendor.xiaomi.hardware.misys@3.0-service \
+    vendor.xiaomi.hardware.misys@4.0-service \
     ims_rtp_daemon \
     imsdaemon \
     init.qti.qcv \
